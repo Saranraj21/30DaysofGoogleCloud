@@ -26,7 +26,58 @@ Activate Cloud Shell
 In the Cloud Console, in the top right toolbar, click the Activate Cloud Shell button.
 Click Continue.
 
+gcloud is the command-line tool for Google Cloud. It comes pre-installed on Cloud Shell and supports tab-completion.
+You can list the active account name with this command:
 
+gcloud auth list
 
+You can list the project ID with this command:
 
+gcloud config list project
 
+Create a bucket
+Run the gsutil mb command and replace with a unique name to create a bucket:
+
+gsutil mb gs://<YOUR-BUCKET-NAME>
+
+Tip : Use your project ID here as bucket name(Only while doing labs).
+Click Check my progress to verify your performed task.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+Task 2: Create a Pub/Sub topic
+Google Cloud Pub/Sub is a messaging service for exchanging event data among applications and services. By decoupling senders and receivers, it allows for secure and highly available communication between independently written applications. Google Cloud Pub/Sub delivers low-latency/durable messaging, and is commonly used by developers in implementing asynchronous workflows, distributing event notifications, and streaming data from various processes or devices.
+Run the following command to create a topic called myTopic:
+
+gcloud pubsub topics create myTopic
+
+Click Check my progress to verify your performed task.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Task 3: Create the thumbnail Cloud Function
+Create a function
+
+In this step, you’re going to create a cloud function using the console.
+1. In the console, click the Navigation menu > Cloud Functions.
+2. Click Create function.
+3. In the Create function dialog, enter the following values:
+Name : GCFunction
+Trigger Type : Cloud Storage
+Event Type : Finalize/Create
+Browse the bucket you have created and click Save.
+Click Save
+click Next
+Set Runtime as Node.js 10
+Entry point : thumbnail
+Then, from lab instructions, replace code for index.js and package.json
+On line 15 of index.js replace the text REPLACE_WITH_YOUR_TOPIC with the topic you created in task 2.
+Then, click Deploy
+After creating the function, upload an image in a bucket. You will see a thumbnail image appear shortly afterward (use REFRESH BUCKET).
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Task 4: Remove the previous cloud engineer
+1.Go to IAM & Admin -> IAM
+2. Search for Username 2
+3. Remove it.
+Click Check my progress to verify your performed task.
