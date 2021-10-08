@@ -20,3 +20,4 @@ There are a lot of things in store for you. We want to make sure that by the end
 ## Program's Syllabus
 The program will introduce you to Computing, Application Development, Big Data & Machine Learning using Google Cloud's training platform called Google Cloud Skills Boost where you will learn each of these topic using self-paced labs that provides you temporary credentials to Google Cloud, so you can learn the cloud using the real thing – no simulations.
 
+![unnamed (3)](https://user-images.githubusercontent.com/79929428/136527505-67933b48-9256-4ca7-b9a5-926ce94c34f8.jpg)
