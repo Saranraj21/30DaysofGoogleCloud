@@ -16,3 +16,7 @@ There are a lot of things in store for you. We want to make sure that by the end
 2. And on top of these amazing badges, get a chance to win some really cool Google Cloud goodies.
 
 <img width="888" alt="goodies" src="https://user-images.githubusercontent.com/79929428/136527038-bb263ed4-3fb1-4ffc-b51b-a236db7fba10.PNG">
+
+## Program's Syllabus
+The program will introduce you to Computing, Application Development, Big Data & Machine Learning using Google Cloud's training platform called Google Cloud Skills Boost where you will learn each of these topic using self-paced labs that provides you temporary credentials to Google Cloud, so you can learn the cloud using the real thing – no simulations.
+
