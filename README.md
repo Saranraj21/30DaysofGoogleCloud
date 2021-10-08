@@ -47,3 +47,7 @@ The program will introduce you to Computing, Application Development, Big Data &
 5. Skill Badge: Integrate with Machine Learning APIs
 
 6. Skill Badge: Explore Machine Learning Models with Explainable AI
+
+
+## Note:
+Cloud Shell Commands and SSH Commands will be placed in centre of the text file.
