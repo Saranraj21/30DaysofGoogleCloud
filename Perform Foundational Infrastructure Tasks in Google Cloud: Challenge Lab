@@ -29,16 +29,16 @@ Click Continue.
 gcloud is the command-line tool for Google Cloud. It comes pre-installed on Cloud Shell and supports tab-completion.
 You can list the active account name with this command:
 
-gcloud auth list
+                                                           gcloud auth list
 
 You can list the project ID with this command:
 
-gcloud config list project
+                                                          gcloud config list project
 
 Create a bucket
 Run the gsutil mb command and replace with a unique name to create a bucket:
 
-gsutil mb gs://<YOUR-BUCKET-NAME>
+                                                          gsutil mb gs://<YOUR-BUCKET-NAME>
 
 Tip : Use your project ID here as bucket name(Only while doing labs).
 Click Check my progress to verify your performed task.
@@ -48,7 +48,7 @@ Task 2: Create a Pub/Sub topic
 Google Cloud Pub/Sub is a messaging service for exchanging event data among applications and services. By decoupling senders and receivers, it allows for secure and highly available communication between independently written applications. Google Cloud Pub/Sub delivers low-latency/durable messaging, and is commonly used by developers in implementing asynchronous workflows, distributing event notifications, and streaming data from various processes or devices.
 Run the following command to create a topic called myTopic:
 
-gcloud pubsub topics create myTopic
+                                                          gcloud pubsub topics create myTopic
 
 Click Check my progress to verify your performed task.
 
