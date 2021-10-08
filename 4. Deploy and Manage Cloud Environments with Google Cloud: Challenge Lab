@@ -1,0 +1,112 @@
+The challenge contains 3 required tasks: 
+
+1. Create the Production Environment
+2. Setup the Admin instance
+3. Verify the Spinnaker deployment
+
+Some Jooli Inc. standards you should follow:
+
+1. Create all resources in the us-east1 region and us-east1-b zone, unless otherwise directed.
+2. Use the project VPCs.
+3. Naming is normally a team-resource, e.g. an instance could be named kraken-webserver1.
+4. Allocate cost-effective resource sizes. Projects are monitored and excessive resource use will result in the containing project’s termination (and possibly yours), so beware. This is the guidance the monitoring team is willing to share; unless directed, use n1-standard-1.
+
+Task 1: Create the production environment
+The first step is to create a production environment.
+
+1. In the GCP Console go to Navigation Menu >Compute Engine > VM Instance.
+2. Click the SSH button to access the jumphost instance.
+3. In the SSH window, go to the cd /work/dm directory.
+4. Use an editor to open the configuration file prod-network.yaml, and replace SET_REGION to us-east1
+
+Copy and Paste the following command.
+
+                                   sed -i s/SET_REGION/us-east1/g prod-network.yaml
+
+                                   gcloud deployment-manager deployments create prod-network --config=prod-network.yaml       
+
+
+5. Now create a Kubernetes cluster in the new network
+
+                                   gcloud config set compute/zone us-east1-b
+
+                                   gcloud container clusters create kraken-prod \
+                                        --num-nodes 2 \
+                                        --network kraken-prod-vpc \
+                                        --subnetwork kraken-prod-subnet
+
+6. Checking Credentials of kraken-pod
+
+                                   gcloud container clusters get-credentials kraken-prod
+
+7. Go to Directory
+
+                                  cd /work/k8s
+                                  for F in $(ls *.yaml); do kubectl create -f $F; done
+
+
+Note: All commands written in SSH
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+Task 2: Setup the Admin instance
+
+In this step Create kraken-admin and Monitoring workspace.
+Create kraken-admin through this command :
+
+                                    gcloud config set compute/zone us-east1-b
+                                    gcloud compute instances create kraken-admin --network-interface="subnet=kraken-mgmt-subnet" --network-interface="subnet=kraken-prod-subnet" 
+
+Create a Monitoring workspace
+
+* In the GCP Console go to Navigation Menu > Monitoring> Alerting.
+* Click Create Policy.
+* Click Add Condition, and then set up the Metrics with the following parameters:
+
+Fields- Options
+
+Resource Type- GCE VM Instance
+
+Metric- CPU Utilization compute.googleapis.com/instance/cpu/utilization
+
+Filter- Choose instance id and paste the value copied from kraken-admin
+
+Threshold- 0.5 for 1 minute
+
+* Click ADD
+* Then add an email in the Notification setting.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+Task 3: Verify the Spinnaker deployment
+In this step the lab manual suggests you use Cloud Shell and kubectl to port forward the spin-deck pod from port 9000 to 8080.
+
+1. In the GCP Console go to Navigation Menu >Kubernetes Engine > Services & Ingress
+
+2. Go to spin-deck.
+
+3. Click Port Forward.
+
+4. Cloud Shell will open with the port forwarding command.
+
+5. Click on the web preview icon on cloud shell open port 8080.
+
+Clone your source code repository and commit it by following the command.
+
+Note: Commands written in cloud Shell.
+
+                                        gcloud config set compute/zone us-east1-b
+
+                                        gcloud source repos clone sample-app
+
+                                        cd sample-app
+
+                                        touch a
+
+                                        git config --global user.email "$(gcloud config get-value account)"
+
+                                        git config --global user.name "Student"
+
+                                        git commit -a -m "change"
+
+                                        git tag v1.0.1
+
+                                        git push --tags
