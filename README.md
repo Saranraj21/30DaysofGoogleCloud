@@ -21,3 +21,29 @@ There are a lot of things in store for you. We want to make sure that by the end
 The program will introduce you to Computing, Application Development, Big Data & Machine Learning using Google Cloud's training platform called Google Cloud Skills Boost where you will learn each of these topic using self-paced labs that provides you temporary credentials to Google Cloud, so you can learn the cloud using the real thing – no simulations.
 
 ![unnamed (3)](https://user-images.githubusercontent.com/79929428/136527505-67933b48-9256-4ca7-b9a5-926ce94c34f8.jpg)
+
+### Track 1: Cloud Engineering Track
+1. Skill Badge: Getting Started: Create and Manage Cloud Resources 
+
+2. Skill Badge: Perform Foundational Infrastructure Tasks in Google Cloud
+
+3. Skill Badge: Setup and Configure a Cloud Environment in Google Cloud
+
+4. Skill Badge: Deploy and Manage Cloud Environments with Google Cloud
+
+5. Skill Badge: Build and Secure Networks in Google Cloud
+
+6. Skill Badge: Deploy to Kubernetes in Google Cloud
+
+### Track 2: Data Science & Machine Learning Track
+1. Skill Badge: Getting Started: Create and Manage Cloud Resources
+
+2. Skill Badge: Perform Foundational Data, ML, and AI Tasks in Google Cloud
+
+3. Skill Badge: Insights from Data with BigQuery
+
+4. Skill Badge: Engineer Data in Google Cloud
+
+5. Skill Badge: Integrate with Machine Learning APIs
+
+6. Skill Badge: Explore Machine Learning Models with Explainable AI
