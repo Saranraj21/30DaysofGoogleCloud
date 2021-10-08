@@ -9,3 +9,4 @@ There are a lot of things in store for you. We want to make sure that by the end
 
 1. You can showcase what you've learned here to your professional network using Google Cloud-hosted quest & skill badges (see below) that you can add to your resume and professional profiles like LinkedIn.
 <img width="905" alt="300" src="https://user-images.githubusercontent.com/79929428/136526572-7510bd2c-4d8e-40b0-a145-0b4a48d123b6.PNG">
+2. And on top of these amazing badges, get a chance to win some really cool Google Cloud goodies.
